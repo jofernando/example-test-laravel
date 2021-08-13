@@ -20,7 +20,7 @@ install:
   - php artisan dusk:chrome-driver
 
 before_install:
-  - mysql -e 'CREATE DATABASE exampleapp;'
+  - mysql -e 'CREATE DATABASE exampletest;'
 
 before_script:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
