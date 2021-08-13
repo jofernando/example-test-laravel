@@ -17,5 +17,4 @@ before_script:
   - php artisan serve --no-reload &
 
 script:
-  - php artisan test
   - php artisan dusk
