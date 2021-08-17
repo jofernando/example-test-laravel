@@ -21,7 +21,6 @@ class StreetTest extends DuskTestCase
         $this->browse(function (Browser $browser) use ($street) {
             $browser
                 ->visitRoute('streets.index')
-                ->storeSource('streets_index.html')
                 ->assertSee($street->name);
         });
     }
@@ -37,7 +36,7 @@ class StreetTest extends DuskTestCase
         });
     }
 
-    public function testPage()
+    public function testCreateAndSeeStreetInIndex()
     {
         $street = Street::factory()->make();
         $this->browse(function (Browser $browser) use ($street) {
@@ -48,6 +47,20 @@ class StreetTest extends DuskTestCase
                 ->press('@submit')
                 ->clickLink('back')
                 ->assertSee($street->name);
+        });
+    }
+
+    public function testInvalidInputHasClass()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser
+                ->visitRoute('streets.create')
+                ->type('@name', '')
+                ->type('@number', 154)
+                ->press('@submit')
+                ->assertAttribute('@name', 'class', ' is-invalid ')
+                ->assertValue('@number', 154)
+                ->assertValue('@name', '');
         });
     }
 }

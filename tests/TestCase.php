@@ -8,4 +8,9 @@ abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
     protected $seed = true;
+
+    protected function assertThatPageStatusIsOk($uri)
+    {
+        $this->get($uri)->assertOk();
+    }
 }

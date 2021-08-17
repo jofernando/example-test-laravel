@@ -9,12 +9,23 @@
 </head>
 
 <body>
+    <h1>Create Street</h1>
     <form action="/streets" method="post">
         @csrf
-        <label for="name">Name</label><br />
-        <input dusk="name" name="name" type="text" /> <br />
-        <label for="number">Number</label><br />
-        <input dusk="number" name="number" type="number" /> <br />
+        <div>
+            <label for="name">Name</label>
+            <input dusk="name" name="name" type="text" class="@error('name') is-invalid @enderror" value="{{ old('name') }}" />
+            @error('name')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div>
+            <label for="number">Number</label>
+            <input dusk="number" name="number" type="number" class="@error('number') is-invalid @enderror" value="{{ old('number') }}" />
+            @error('number')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
         <input dusk="submit" type="submit" value="Submit">
     </form>
 </body>

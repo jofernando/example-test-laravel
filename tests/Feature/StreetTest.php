@@ -17,9 +17,11 @@ class StreetTest extends TestCase
      */
     public function test_example()
     {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
+        $street = Street::find(1);
+        $this->assertThatPageStatusIsOk(route('streets.index'));
+        $this->assertThatPageStatusIsOk(route('streets.show', $street));
+        $this->assertThatPageStatusIsOk(route('streets.edit', $street));
+        $this->assertThatPageStatusIsOk(route('streets.create'));
     }
 
     public function test_create_street_with_faker()
@@ -28,5 +30,19 @@ class StreetTest extends TestCase
         $response = $this->post(route('streets.store', $street->toArray()));
         $response->assertSuccessful();
         $this->assertDatabaseHas('streets', ['name' => $street->name]);
+    }
+
+    public function test_invalid_name()
+    {
+        $street = ['name' => '', 'number' => 154];
+        $response = $this->post(route('streets.store', $street));
+        $response->assertSessionHasErrors(['name']);
+        $response->assertSessionDoesntHaveErrors(['number']);
+    }
+
+    public function test_paginations_works()
+    {
+        $response = $this->get(route('streets.index'));
+        
     }
 }

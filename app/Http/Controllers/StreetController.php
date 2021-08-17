@@ -14,7 +14,7 @@ class StreetController extends Controller
      */
     public function index()
     {
-        $streets = Street::all();
+        $streets = Street::paginate(4);
         return view('streets.index')->with('streets', $streets);
     }
 
@@ -71,7 +71,10 @@ class StreetController extends Controller
      */
     public function update(Request $request, Street $street)
     {
-        $street->fill($request->all());
+        $street->fill($request->validate([
+            'name' => ['required', 'string'],
+            'number' => ['required', 'numeric']
+        ]));
         $street->save();
         return view('streets.show')->with('street', $street);
     }
