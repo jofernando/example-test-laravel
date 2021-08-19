@@ -39,10 +39,4 @@ class StreetTest extends TestCase
         $response->assertSessionHasErrors(['name']);
         $response->assertSessionDoesntHaveErrors(['number']);
     }
-
-    public function test_paginations_works()
-    {
-        $response = $this->get(route('streets.index'));
-        
-    }
 }

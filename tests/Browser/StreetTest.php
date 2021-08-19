@@ -63,4 +63,13 @@ class StreetTest extends DuskTestCase
                 ->assertValue('@name', '');
         });
     }
+
+    public function testPaginationWorks()
+    {
+        Street::factory()->count(16)->create();
+        $this->browse(function (Browser $browser) {
+            $elements = $browser->visitRoute('streets.index')->elements('@street');
+            $this->assertCount(4, $elements);
+        });
+    }
 }
