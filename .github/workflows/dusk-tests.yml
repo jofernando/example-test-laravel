@@ -1,4 +1,4 @@
-name: Laravel Tests
+name: Laravel Dusk Tests
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Copy .env
-      run: cp .env.testing .env
+      run: cp .env.dusk.local .env
     - name: Install Dependencies
       run: composer install --quiet --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Generate Application Key
@@ -34,9 +34,7 @@ jobs:
       run: ./vendor/laravel/dusk/bin/chromedriver-linux &
     - name: Run Laravel Server
       run: php artisan serve --no-reload &
-    - name: Execute tests (Unit and Feature tests)
-      run: php artisan test
-    - name: Excute tests(Dusk tests)
+    - name: Excute tests (Dusk tests)
       env:
         APP_URL: "http://127.0.0.1:8000"
       run: php artisan dusk
