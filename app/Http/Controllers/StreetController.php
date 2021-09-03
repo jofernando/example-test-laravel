@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Street;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreStreetRequest;
+use App\Http\Requests\UpdateStreetRequest;
 
 class StreetController extends Controller
 {
@@ -31,19 +33,21 @@ class StreetController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreStreetRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreStreetRequest $request)
     {
         $street = new Street();
-        return $this->update($request, $street);
+        $street->fill($request->validated());
+        $street->save();
+        return view('streets.show')->with('street', $street);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Street  $street
+     * @param  \App\Models\Street $street
      * @return \Illuminate\Http\Response
      */
     public function show(Street $street)
@@ -54,7 +58,7 @@ class StreetController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Street  $street
+     * @param  \App\Models\Street $street
      * @return \Illuminate\Http\Response
      */
     public function edit(Street $street)
@@ -65,16 +69,13 @@ class StreetController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Street  $street
+     * @param  \App\Http\Requests\UpdateStreetRequest $request
+     * @param  \App\Models\Street                     $street
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Street $street)
+    public function update(UpdateStreetRequest $request, Street $street)
     {
-        $street->fill($request->validate([
-            'name' => ['required', 'string'],
-            'number' => ['required', 'numeric']
-        ]));
+        $street->fill($request->validated());
         $street->save();
         return view('streets.show')->with('street', $street);
     }
@@ -82,7 +83,7 @@ class StreetController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Street  $street
+     * @param  \App\Models\Street $street
      * @return \Illuminate\Http\Response
      */
     public function destroy(Street $street)
