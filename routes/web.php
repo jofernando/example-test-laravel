@@ -14,11 +14,15 @@ use App\Http\Controllers\StreetController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get(
+    '/', function () {
+        return view('welcome');
+    }
+);
 
-Route::resources([
+Route::resources(
+    [
     'countries' => CountryController::class,
     'streets' => StreetController::class
-]);
+    ]
+);
