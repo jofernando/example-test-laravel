@@ -15,7 +15,7 @@ class StreetTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function testExample()
     {
         $street = Street::find(1);
         $this->assertThatPageStatusIsOk(route('streets.index'));
@@ -24,7 +24,7 @@ class StreetTest extends TestCase
         $this->assertThatPageStatusIsOk(route('streets.create'));
     }
 
-    public function test_create_street_with_faker()
+    public function testCreateStreetWithFaker()
     {
         $street = Street::factory()->make();
         $response = $this->post(route('streets.store', $street->toArray()));
@@ -32,7 +32,7 @@ class StreetTest extends TestCase
         $this->assertDatabaseHas('streets', ['name' => $street->name]);
     }
 
-    public function test_invalid_name()
+    public function testInvalidName()
     {
         $street = ['name' => '', 'number' => 154];
         $response = $this->post(route('streets.store', $street));
