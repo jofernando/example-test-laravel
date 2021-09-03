@@ -1,4 +1,4 @@
-name: Code Review
+name: PHP Mess Detector
 
 on:
   push:
@@ -21,4 +21,4 @@ jobs:
           tools: phpmd
 
       - name: Run PHPMD
-        run: phpmd . github rulesets.xml --exclude 'vendor/*,database/migrations'
+        run: phpmd . github phpmd.xml --exclude 'vendor/*,database/migrations'
