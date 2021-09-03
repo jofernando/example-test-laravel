@@ -21,4 +21,4 @@ jobs:
           tools: phpmd
 
       - name: Run PHPMD
-        run: phpmd . github rulesets.xml --exclude 'vendor/*'
+        run: phpmd . github rulesets.xml --exclude 'vendor/*,database/migrations'
