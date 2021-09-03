@@ -13,9 +13,9 @@
         @method('put')
         @csrf
         <label for="name">Name</label><br />
-        <input name="name" type="text" value="{{$street->name}}"/> <br />
+        <input name="name" type="text" value="{{old('name', $street->name)}}"/> <br />
         <label for="number">Number</label><br />
-        <input name="number" type="number" value="{{$street->number}}"/> <br />
+        <input name="number" type="number" value="{{old('number', $street->number)}}"/> <br />
         <input type="submit" value="Submit">
     </form>
 </body>

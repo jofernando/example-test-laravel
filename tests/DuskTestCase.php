@@ -15,7 +15,7 @@ abstract class DuskTestCase extends BaseTestCase
      * Prepare for Dusk test execution.
      *
      * @beforeClass
-     * @return void
+     * @return      void
      */
     public static function prepare()
     {
@@ -31,14 +31,22 @@ abstract class DuskTestCase extends BaseTestCase
      */
     protected function driver()
     {
-        $options = (new ChromeOptions)->addArguments(collect([
-            '--window-size=1920,1080',
-        ])->unless($this->hasHeadlessDisabled(), function ($items) {
-            return $items->merge([
-                '--disable-gpu',
-                '--headless',
-            ]);
-        })->all());
+        $options = (new ChromeOptions)->addArguments(
+            collect(
+                [
+                '--window-size=1920,1080',
+                ]
+            )->unless(
+                $this->hasHeadlessDisabled(), function ($items) {
+                    return $items->merge(
+                        [
+                        '--disable-gpu',
+                        '--headless',
+                        ]
+                    );
+                }
+            )->all()
+        );
 
         return RemoteWebDriver::create(
             $_ENV['DUSK_DRIVER_URL'] ?? 'http://localhost:9515',
