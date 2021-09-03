@@ -1,12 +1,9 @@
 <?xml version="1.0"?>
 <ruleset name="Custom Standard">
 
- <!--
-    Include all sniffs in the PEAR standard. Note that the
-    path to the standard does not have to be specified as the
-    PEAR standard exists inside the PHP_CodeSniffer install
-    directory.
- -->
- <rule ref="PEAR"/>
+    <file>.</file>
+    <exclude-pattern>database/migrations</exclude-pattern>
+    <exclude-pattern>vendor</exclude-pattern>
+    <rule ref="PEAR"/>
 
 </ruleset>
