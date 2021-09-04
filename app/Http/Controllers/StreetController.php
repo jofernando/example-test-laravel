@@ -33,7 +33,8 @@ class StreetController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreStreetRequest $request
+     * @param \App\Http\Requests\StoreStreetRequest $request
+     * 
      * @return \Illuminate\Http\Response
      */
     public function store(StoreStreetRequest $request)
@@ -47,7 +48,8 @@ class StreetController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Street $street
+     * @param \App\Models\Street $street
+     * 
      * @return \Illuminate\Http\Response
      */
     public function show(Street $street)
@@ -58,7 +60,8 @@ class StreetController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Street $street
+     * @param \App\Models\Street $street
+     * 
      * @return \Illuminate\Http\Response
      */
     public function edit(Street $street)
@@ -69,8 +72,9 @@ class StreetController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateStreetRequest $request
-     * @param  \App\Models\Street                     $street
+     * @param \App\Http\Requests\UpdateStreetRequest $request
+     * @param \App\Models\Street                     $street
+     * 
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateStreetRequest $request, Street $street)
@@ -83,7 +87,8 @@ class StreetController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Street $street
+     * @param \App\Models\Street $street
+     * 
      * @return \Illuminate\Http\Response
      */
     public function destroy(Street $street)

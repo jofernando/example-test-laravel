@@ -13,9 +13,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
+        $this->call(
+            [
             CountrySeeder::class,
             StreetSeeder::class
-        ]);
+            ]
+        );
     }
 }
