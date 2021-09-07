@@ -55,10 +55,7 @@ class StreetController extends Controller
      */
     public function show(Street $street)
     {
-        return view(
-            'streets.show')->with(
-                'street', $street
-    );
+        return view('streets.show')->with('street', $street);
     }
 
     /**
