@@ -16,7 +16,7 @@ class StreetController extends Controller
      */
     public function index()
     {
-        $street = []
+        $street = [];
         $streets = Street::paginate(4);
         return view('streets.index')->with('streets', $streets);
     }
