@@ -43,7 +43,9 @@ class StreetController extends Controller
         $street = new Street();
         $street->fill($request->validated());
         $street->save();
-        return view('streets.show')->with('street', $street);
+        return view(
+            'streets.show')->with(
+                'street', $street);
     }
 
     /**
