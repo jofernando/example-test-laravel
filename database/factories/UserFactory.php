@@ -41,7 +41,7 @@ class UserFactory extends Factory
         return $this->state(
             function () {
                 return [
-                'email_verified_at' => null,
+                    'email_verified_at' => null,
                 ];
             }
         );
