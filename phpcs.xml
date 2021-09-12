@@ -2,10 +2,90 @@
 <ruleset name="Custom Standard">
     <file>.</file>
 
+    <exclude-pattern>app/Http/Controllers/Auth</exclude-pattern>
     <exclude-pattern>database/migrations</exclude-pattern>
     <exclude-pattern>vendor</exclude-pattern>
 
-    <rule ref="PEAR">
-        <exclude name="PEAR.Commenting" /> 
+    <rule ref="Generic.Arrays.ArrayIndent" />
+    <rule ref="Generic.Classes.DuplicateClassName" />
+    <rule ref="Generic.CodeAnalysis.EmptyPHPStatement" />
+    <rule ref="Generic.CodeAnalysis.EmptyStatement" />
+    <rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop" />
+    <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier" />
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter" />
+    <rule ref="Generic.CodeAnalysis.UselessOverridingMethod" />
+    <rule ref="Generic.ControlStructures.InlineControlStructure">
+        <properties>
+            <property name="error" value="false"/>
+        </properties>
     </rule>
+    <rule ref="Generic.Files.EndFileNewline" />
+    <rule ref="Generic.Files.LineEndings" />
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="85"/>
+            <property name="absoluteLineLimit" value="0"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.Formatting.DisallowMultipleStatements" />
+    <rule ref="Generic.Formatting.MultipleStatementAlignment" />
+    <rule ref="Generic.Formatting.NoSpaceAfterCast" />
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing" />
+    <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman" />
+    <rule ref="Generic.Metrics.CyclomaticComplexity">
+        <properties>
+            <property name="absoluteComplexity" value="15"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.Metrics.NestingLevel" />
+    <rule ref="Generic.NamingConventions.AbstractClassNamePrefix" />
+    <rule ref="Generic.NamingConventions.CamelCapsFunctionName" />
+    <rule ref="Generic.NamingConventions.ConstructorName" />
+    <rule ref="Generic.NamingConventions.InterfaceNameSuffix" />
+    <rule ref="Generic.NamingConventions.TraitNameSuffix" />
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName" />
+    <rule ref="Generic.PHP.CharacterBeforePHPOpeningTag" />
+    <rule ref="Generic.PHP.ClosingPHPTag" />
+    <rule ref="Generic.PHP.DeprecatedFunctions" />
+    <rule ref="Generic.PHP.DisallowAlternativePHPTags" />
+    <rule ref="Generic.PHP.DisallowRequestSuperglobal" />
+    <rule ref="Generic.PHP.DisallowShortOpenTag" />
+    <rule ref="Generic.PHP.DiscourageGoto" />
+    <rule ref="Generic.PHP.ForbiddenFunctions" />
+    <rule ref="Generic.PHP.LowerCaseConstant" />
+    <rule ref="Generic.PHP.LowerCaseKeyword" />
+    <rule ref="Generic.PHP.LowerCaseType" />
+    <rule ref="Generic.PHP.NoSilencedErrors" />
+    <rule ref="Generic.PHP.SAPIUsage" />
+    <rule ref="Generic.Strings.UnnecessaryStringConcat" />
+    <rule ref="Generic.WhiteSpace.ArbitraryParenthesesSpacing" />
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent" />
+    <rule ref="Generic.WhiteSpace.IncrementDecrementSpacing" />
+    <rule ref="Generic.WhiteSpace.LanguageConstructSpacing" />
+    <rule ref="Generic.WhiteSpace.ScopeIndent" />
+    <rule ref="Generic.WhiteSpace.SpreadOperatorSpacingAfter" />
+    <rule ref="PEAR.Commenting.InlineComment" />
+    <rule ref="PEAR.ControlStructures.ControlSignature" />
+    <rule ref="PEAR.ControlStructures.MultiLineCondition" />
+    <rule ref="PEAR.Files.IncludingFile" />
+    <rule ref="PEAR.Formatting.MultiLineAssignment" />
+    <rule ref="PEAR.Functions.FunctionCallSignature" />
+    <rule ref="PEAR.Functions.FunctionDeclaration" />
+    <rule ref="PEAR.Functions.ValidDefaultValue" />
+    <rule ref="PEAR.NamingConventions.ValidClassName" />
+    <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent" />
+    <rule ref="PEAR.WhiteSpace.ScopeClosingBrace" />
+    <rule ref="PEAR.WhiteSpace.ScopeIndent" />
+    <rule ref="Squiz.Arrays.ArrayBracketSpacing" />
+    <rule ref="Squiz.Classes.LowercaseClassKeywords" />
+    <rule ref="Squiz.Commenting.DocCommentAlignment" />
+    <rule ref="Squiz.Commenting.FunctionCommentThrowTag" />
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration" />
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration" />
+    <rule ref="Squiz.ControlStructures.LowercaseDeclaration" />
+    <rule ref="Squiz.Functions.FunctionDuplicateArgument" />
+    <rule ref="Squiz.Functions.LowercaseFunctionKeywords" />
+    <rule ref="Squiz.Scope.StaticThisUsage" />
+    <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing" />
+    <rule ref="Squiz.WhiteSpace.SemicolonSpacing" />
 </ruleset>
