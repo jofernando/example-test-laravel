@@ -22,7 +22,7 @@ Route::get(
 
 Route::resources(
     [
-    'countries' => CountryController::class,
-    'streets' => StreetController::class
+        'countries' => CountryController::class,
+        'streets' => StreetController::class
     ]
 );
