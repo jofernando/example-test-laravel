@@ -45,7 +45,6 @@
     <rule ref="Generic.NamingConventions.TraitNameSuffix" />
     <rule ref="Generic.NamingConventions.UpperCaseConstantName" />
     <rule ref="Generic.PHP.CharacterBeforePHPOpeningTag" />
-    <rule ref="Generic.PHP.ClosingPHPTag" />
     <rule ref="Generic.PHP.DeprecatedFunctions" />
     <rule ref="Generic.PHP.DisallowAlternativePHPTags" />
     <rule ref="Generic.PHP.DisallowRequestSuperglobal" />
