@@ -3,9 +3,6 @@
     <file>app</file>
     <file>tests</file>
 
-
-    <exclude-pattern>app/Http/Controllers/Auth</exclude-pattern>
-
     <rule ref="Generic.Arrays.ArrayIndent" />
     <rule ref="Generic.Classes.DuplicateClassName" />
     <rule ref="Generic.CodeAnalysis.EmptyPHPStatement" />
