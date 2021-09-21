@@ -23,9 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        fetch-depth: 0
-    - name: pull
-      run: git pull origin testes
+        ref: testes
     - name: Copy .env
       run: cp .env.dusk.local .env
     - name: Install Dependencies
