@@ -24,8 +24,8 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - name: merge
-      run: git merge origin/testes
+    - name: pull
+      run: git pull origin/testes
     - name: Copy .env
       run: cp .env.dusk.local .env
     - name: Install Dependencies
