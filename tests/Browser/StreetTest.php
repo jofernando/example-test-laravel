@@ -27,7 +27,7 @@ class StreetTest extends DuskTestCase
         );
     }
 
-    public function testCreateStreet()
+    public function testCreateStreetWithName012()
     {
         $this->browse(
             function (Browser $browser) {
