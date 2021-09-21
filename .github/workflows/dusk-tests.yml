@@ -25,7 +25,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: merge
-      run: git merge testes
+      run: git merge origin/testes
     - name: Copy .env
       run: cp .env.dusk.local .env
     - name: Install Dependencies
