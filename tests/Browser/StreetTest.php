@@ -35,7 +35,7 @@ class StreetTest extends DuskTestCase
                     ->visitRoute('streets.create')
                     ->type('@name', 'Rua 012')
                     ->screenshot('streets_create')
-                    ->assertInputValue('name', 'Rua 0');
+                    ->assertInputValue('name', 'Rua 012');
             }
         );
     }
