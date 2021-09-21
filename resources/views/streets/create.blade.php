@@ -14,7 +14,7 @@
         @csrf
         <div>
             <label for="name">Name</label>
-            <input dusk="name" name="name" type="text" class="@error('name') is-invalid @enderror" value="{{ old('name') }}" />
+            <input dusk="name" name="name" type="text" value="{{ old('name') }}" />
             @error('name')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
