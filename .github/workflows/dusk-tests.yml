@@ -24,10 +24,10 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-      - run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git merge origin/testes --no-commit --no-ff
+    - run: |
+      git config user.name github-actions
+      git config user.email github-actions@github.com
+      git merge origin/testes --no-commit --no-ff
     - name: Copy .env
       run: cp .env.dusk.local .env
     - name: Install Dependencies
