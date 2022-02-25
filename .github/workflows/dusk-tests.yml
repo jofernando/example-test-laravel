@@ -25,7 +25,7 @@ jobs:
     - name: Copy .env
       run: cp .env.dusk.local .env
     - name: Install Dependencies
-      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      run: composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Generate Application Key
       run: php artisan key:generate
     - name: Upgrade Chrome Driver
