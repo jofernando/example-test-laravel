@@ -12,9 +12,12 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
-        - name: Install dependencies
-          run: composer install --dev --prefer-dist --no-progress --no-suggest
-        - name: PHPCS check
-          uses: chekalsky/phpcs-action@v1
+        - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
           with:
-            phpcs_bin_path: './vendor/bin/phpcs'
+            php-version: '7.3'
+        - name: Install dependencies
+          run: composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+        - name: install phpcs
+          run: composer global require "squizlabs/php_codesniffer=*"
+        - name: PHPCS check
+          run: phpcs --standard=phpcs.xml app

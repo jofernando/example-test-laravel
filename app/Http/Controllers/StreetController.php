@@ -17,7 +17,8 @@ class StreetController extends Controller
     public function index()
     {
         $streets = Street::paginate(4);
-        return view('streets.index')->with('streets', $streets);
+        return view('streets.index')->with(
+            'streets', $streets);
     }
 
     /**
@@ -34,13 +35,12 @@ class StreetController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \App\Http\Requests\StoreStreetRequest $request
-     * 
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreStreetRequest $request)
-    {
+    public function store(StoreStreetRequest $request) {
         $street = new Street();
-        $street->fill($request->validated());
+        $street->fill(
+        $request->validated());
         $street->save();
         return view('streets.show')->with('street', $street);
     }
@@ -94,6 +94,7 @@ class StreetController extends Controller
     public function destroy(Street $street)
     {
         $street->delete();
-        return redirect()->action([StreetController::class, 'index']);
+        return redirect()->action(
+            [StreetController::class, 'index']);
     }
 }
