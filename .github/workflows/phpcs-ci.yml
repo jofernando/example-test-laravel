@@ -17,6 +17,7 @@ jobs:
             php-version: '7.3'
         - name: Install dependencies
           run: composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+        - name: install phpcs
           run: composer global require "squizlabs/php_codesniffer=*"
         - name: PHPCS check
           run: phpcs --standard=phpcs.xml app
